@@ -23,12 +23,6 @@ public class Main {
                     convertirPeso(scanner);
                     break;
                 case 4:
-                    convertirDatos(scanner);
-                    break;
-                case 5:
-                    convertirMoneda(scanner);
-                    break;
-                case 6:
                     convertirTiempo(scanner);
                     break;
                 case 0:
@@ -45,9 +39,7 @@ public class Main {
         System.out.println("1. Longitud");
         System.out.println("2. Temperatura");
         System.out.println("3. Peso");
-        System.out.println("4. Datos");
-        System.out.println("5. Moneda");
-        System.out.println("6. Tiempo");
+        System.out.println("4. Tiempo");
         System.out.println("0. Salir");
         System.out.print("Seleccione una opción: ");
     }
@@ -220,23 +212,188 @@ public class Main {
     // -----------------------------------------------------------------------------
     private static void convertirPeso(Scanner scanner) {
         // ... (Implementar la conversión de peso)
-    }
+        System.out.println("\n**Conversión de Peso**");
+        System.out.println("1. Gramos a Libras");
+        System.out.println("2. Libras a gramos");
+        System.out.println("3. Libras a kilos");
+        System.out.println("4. Kilos a Libras");
+        System.out.println("5. Kilos a Toneladas");
+        System.out.println("6. Toneladas a Kilos");
+        System.out.println("0. Regresar al menú principal");
+        System.out.print("Seleccione una opción: ");
 
-    // Datos
-    // -----------------------------------------------------------------------------
-    private static void convertirDatos(Scanner scanner) {
-        // ... (Implementar la conversión de datos)
-    }
+        int opcionPeso = scanner.nextInt();
+        scanner.nextLine(); // Consumir el salto de línea
 
-    // Moneda
-    // -----------------------------------------------------------------------------
-    private static void convertirMoneda(Scanner scanner) {
-        // ... (Implementar la conversión de moneda)
+        switch (opcionPeso) {
+            case 1:
+                convertirGramosALibras(scanner);               
+                break;
+            case 2:
+                convertirLibrasAGramos(scanner);
+                break;
+            case 3:
+                convertirLibrasAKilos(scanner);
+                break;
+            case 4:
+                convertirKilosALibras(scanner);
+                break;
+            case 5:
+                convertirKilosAToneladas(scanner);
+                break;
+            case 6:
+                convertirToneladasAKilos(scanner);
+                break;                    
+            case 0:
+                System.out.println("Regresar al menu principal");
+                break;
+                default:
+                System.out.println("Opcion invalida. Intente de nuevo."); 
+        }
+
+    }
+    private static void convertirGramosALibras(Scanner scanner) {
+        System.out.print("Ingrese el peso en Gramos: ");
+        double gramos = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double libras = gramos/453.59237;
+        System.out.println(gramos + " Gramos equivalen a: " + libras + " Libras.");
+    }
+    private static void convertirLibrasAGramos(Scanner scanner) {
+        System.out.print("Ingrese el peso en Libras: ");
+        double libras = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double gramos = libras*453.59237;
+        System.out.println(libras + " Libras equivalen a: " + gramos + " Gramos.");
+    }
+    private static void convertirLibrasAKilos(Scanner scanner) {
+        System.out.print("Ingrese el peso en Libras: ");
+        double libras = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double kilos = libras/2.20462;
+        System.out.println(libras + " Libras equivalen a: " + kilos + " Kilos.");
+    }
+    private static void convertirKilosALibras(Scanner scanner) {
+        System.out.print("Ingrese el peso en Kilos: ");
+        double kilos = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double libras = kilos*2.20462;
+        System.out.println(kilos + " Kilos equivalen a: " + libras + " Libras.");
+    }
+    private static void convertirKilosAToneladas(Scanner scanner) {
+        System.out.print("Ingrese el peso en Kilos: ");
+        double kilos = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double toneladas = kilos/1000;
+        System.out.println(kilos + " Kilos equivalen a: " + toneladas + " Toneladas.");
+    }
+    private static void convertirToneladasAKilos(Scanner scanner) {
+        System.out.print("Ingrese el peso en Toneladas: ");
+        double toneladas = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double kilos = toneladas*1000;
+        System.out.println(toneladas + " Toneladas equivalen a: " + kilos + " Kilos.");
     }
 
     // Tiempo
     // -----------------------------------------------------------------------------
     private static void convertirTiempo(Scanner scanner) {
         // ... (Implementar la conversión de tiempo)
+        // ... (Implementar la conversión de peso)
+        System.out.println("\n**Conversión de Tiempo**");
+        System.out.println("1. Segundos a Minutos");
+        System.out.println("2. Segundos a Horas");
+        System.out.println("3. Minutos a Segundos");
+        System.out.println("4. Minutos a Horas");
+        System.out.println("5. Horas a Segundos");
+        System.out.println("6. Horas a Minutos");
+        System.out.println("0. Regresar al menú principal");
+        System.out.print("Seleccione una opción: ");
+
+        int opcionTiempo = scanner.nextInt();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        switch (opcionTiempo) {
+            case 1:
+                convertirSegundosAMinutos(scanner);                
+                break;
+            case 2:
+                convertirSegundosAHoras(scanner);
+                break;
+            case 3:
+                convertirMinutosASegundos(scanner);
+                break;
+            case 4:
+                convertirMinutosAHoras(scanner);
+                break;
+            case 5:
+                convertirHorasASegundos(scanner);
+                break;
+            case 6:
+                convertirHorasAMinutos(scanner);
+                break;                   
+            case 0:
+                System.out.println("Regresar al menu principal");
+                break;
+                default:
+                System.out.println("Opcion invalida. Intente de nuevo."); 
+        }
     }
+    private static void convertirSegundosAMinutos(Scanner scanner) {
+        System.out.print("Ingrese el tiempo en Segundos: ");
+        double segundos = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double minutos = segundos/60;
+        System.out.println(segundos + " Segundos equivalen a: " + minutos + " Minutos. ");
+    }
+    private static void convertirSegundosAHoras(Scanner scanner) {
+        System.out.print("Ingrese el tiempo en Segundos: ");
+        double segundos = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double horas = segundos/3600;
+        System.out.println(segundos + " Segundos equivalen a: " + horas + " Horas. ");
+    }
+    private static void convertirMinutosASegundos(Scanner scanner) {
+        System.out.print("Ingrese el tiempo en Minutos: ");
+        double minutos = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double segundos = minutos*60;
+        System.out.println(minutos + " Minutos equivalen a: " + segundos + " Segundos. ");
+    }
+    private static void convertirMinutosAHoras(Scanner scanner) {
+        System.out.print("Ingrese el tiempo en Minutos: ");
+        double minutos = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double horas = minutos/60;
+        System.out.println(minutos + " Minutos equivalen a: " + horas + " Horas. ");
+    }
+    private static void convertirHorasASegundos(Scanner scanner) {
+        System.out.print("Ingrese el tiempo en Horas: ");
+        double horas = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double segundos = horas*3600;
+        System.out.println(horas + " Horas equivalen a: " + segundos + " Segundos. ");
+    }
+    private static void convertirHorasAMinutos(Scanner scanner) {
+        System.out.print("Ingrese el tiempo en Horas: ");
+        double horas = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        double minutos = horas*60;
+        System.out.println(horas + " Horas equivalen a: " + minutos + " Minutos. ");
+    }
+
+    //Juliana Restrepo Gomez - Paulina Lopera Bedoya - Oscar Acevedo Vega
+
 }
